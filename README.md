@@ -9,10 +9,10 @@ ___
 # Hindi News
 
 ## :rocket: all news
-todo:url here
+https://dainik-news.herokuapp.com/
 
 ## :rocket: news by category
-todo:url here
+https://dainik-news.herokuapp.com/category_name
 
 ___
 ### :sparkles: Categories
@@ -61,10 +61,10 @@ ___
 # Gujarati News
 
 ## :rocket: all news
-todo:url here
+https://gujarati-news.herokuapp.com
 
 ## :rocket: news by category
-todo:url here
+https://gujarati-news.herokuapp.com/category_name
 
 ___
 ### :sparkles: Categories

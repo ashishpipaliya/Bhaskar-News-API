@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon divyabhaskar.js"
+        "start": "node dainikbhaskar.js"
     },
     "author": "ashish",
     "license": "ISC",
@@ -13,5 +13,8 @@
         "express": "^4.17.1",
         "fetch": "^1.1.0",
         "jsdom": "^16.4.0"
+    },
+    "engines": {
+        "node": "10.x"
     }
 }
