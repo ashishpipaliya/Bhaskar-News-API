@@ -9,9 +9,7 @@ const app = express();
 
 app.get('/', async(req, res) => {
 
-    const url = "https://www.bhaskar.com/__api__/api/1.0/feed/home/";
-
-
+    const url = "https://www.bhaskar.com/__api__/api/1.0/feed/home";
 
     var newsResponse = {};
     var articles = [];
@@ -29,12 +27,14 @@ app.get('/', async(req, res) => {
 
         for (var i = 0; i < articleCount; i++) {
             articles.push({
-                headerTitle: response.data.feed[i].header.title,
-                url: "https://www.bhaskar.com" + response.data.feed[i].shortUrl,
-                imageUrl: response.data.feed[i].header.media.url,
-                publishTime: response.data.feed[i].publishTime,
-                slugColor: response.data.feed[i].category.color,
-
+                "slug": response.data.feed[i].header?.slug,
+                "headerTitle": response.data.feed[i]?.header?.title,
+                url: "https://www.bhaskar.com" + response.data.feed[i]?.shortUrl,
+               "imageUrl": response.data.feed[i].header?.media[0]?.url ?? null,
+                "publishTime": response.data.feed[i]?.publishTime,
+                "displayNameEn": response.data.feed[i]?.category?.nameEn,
+                "displayNameGuj": response.data.feed[i]?.category?.displayName,
+                "slugColor": response.data.feed[i]?.category?.color,
             });
         }
 
@@ -46,7 +46,7 @@ app.get('/', async(req, res) => {
         // console.log(error.message);
         res.send({
             status: error.status,
-            message: error.message
+            message: error.message,
         });
     });
 
@@ -79,12 +79,14 @@ app.get('/:category', async(req, res) => {
 
         for (var i = 0; i < articleCount; i++) {
             articles.push({
-                headerTitle: response.data.feed[i].header.title,
-                url: "https://www.bhaskar.com" + response.data.feed[i].shortUrl,
-                imageUrl: response.data.feed[i].header.media.url,
-                publishTime: response.data.feed[i].publishTime,
-                slugColor: response.data.feed[i].category.color,
-
+                "slug": response.data.feed[i].header?.slug,
+                "headerTitle": response.data.feed[i]?.header?.title,
+                url: "https://www.bhaskar.com" + response.data.feed[i]?.shortUrl,
+               "imageUrl": response.data.feed[i].header?.media[0]?.url ?? null,
+                "publishTime": response.data.feed[i]?.publishTime,
+                "displayNameEn": response.data.feed[i]?.category?.nameEn,
+                "displayNameGuj": response.data.feed[i]?.category?.displayName,
+                "slugColor": response.data.feed[i]?.category?.color,
             });
         }
 

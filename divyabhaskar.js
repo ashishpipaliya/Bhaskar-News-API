@@ -16,34 +16,33 @@ app.get('/', async(req, res) => {
 
     axios.get(url, { headers }).then((response) => {
 
-
         var articleCount = response.data.feed.length;
-        var categoryName = response.data.categoryName;
 
         newsResponse["count"] = articleCount;
-        newsResponse["categoryName"] = categoryName;
-
 
 
         for (var i = 0; i < articleCount; i++) {
-            articles.push({
-                headerTitle: response.data.feed[i].header.title,
-                url: "https://www.divyabhaskar.co.in" + response.data.feed[i].shortUrl,
-                imageUrl: response.data.feed[i].header.media.url,
-                publishTime: response.data.feed[i].publishTime,
-                slugColor: response.data.feed[i].category.color,
 
+            articles.push({
+                               "slug": response.data.feed[i].header?.slug,
+                "headerTitle": response.data.feed[i]?.header?.title,
+                "url": "https://www.divyabhaskar.co.in" + response.data.feed[i]?.shortUrl,
+                "imageUrl": response.data.feed[i].header?.media[0]?.url ?? null,
+                "publishTime": response.data.feed[i]?.publishTime,
+                "displayNameEn": response.data.feed[i]?.category?.nameEn,
+                "displayNameGuj": response.data.feed[i]?.category?.displayName,
+                "slugColor": response.data.feed[i]?.category?.color,
             });
         }
+
+
 
         newsResponse["articles"] = articles;
 
         res.json(newsResponse);
 
     }).catch(function(error) {
-        // console.log(error.message);
         res.send({
-            status: error.status,
             message: error.message
         });
     });
@@ -77,11 +76,16 @@ app.get('/:category', async(req, res) => {
 
         for (var i = 0; i < articleCount; i++) {
             articles.push({
-                headerTitle: response.data.feed[i].header.title,
-                url: "https://www.divyabhaskar.co.in" + response.data.feed[i].shortUrl,
-                imageUrl: response.data.feed[i].header.media.url,
-                publishTime: response.data.feed[i].publishTime,
-                slugColor: response.data.feed[i].category.color,
+
+
+                "slug": response.data.feed[i].header?.slug,
+                "headerTitle": response.data.feed[i]?.header?.title,
+                "url": "https://www.divyabhaskar.co.in" + response.data.feed[i]?.shortUrl,
+                "imageUrl": response.data.feed[i].header?.media[0]?.url ?? null,
+                "publishTime": response.data.feed[i]?.publishTime,
+                "displayNameEn": response.data.feed[i]?.category?.nameEn,
+                "displayNameGuj": response.data.feed[i]?.category?.displayName,
+                "slugColor": response.data.feed[i]?.category?.color,
 
             });
         }
