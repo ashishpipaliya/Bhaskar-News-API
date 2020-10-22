@@ -7,14 +7,14 @@ const app = express();
 
 // all news
 
-app.get('/', async(req, res) => {
+app.get('/divya', async(req, res) => {
 
     const url = "https://www.divyabhaskar.co.in/__api__/api/1.0/feed/home";
 
     var newsResponse = {};
     var articles = [];
 
-    axios.get(url, { headers }).then((response) => {
+    axios.get(url, { divyaheaders }).then((response) => {
 
         var articleCount = response.data.feed.length;
 
@@ -24,14 +24,14 @@ app.get('/', async(req, res) => {
         for (var i = 0; i < articleCount; i++) {
 
             articles.push({
-                               "slug": response.data.feed[i].header?.slug,
-                "headerTitle": response.data.feed[i]?.header?.title,
-                "url": "https://www.divyabhaskar.co.in" + response.data.feed[i]?.shortUrl,
-                "imageUrl": response.data.feed[i].header?.media[0]?.url ?? null,
-                "publishTime": response.data.feed[i]?.publishTime,
-                "displayNameEn": response.data.feed[i]?.category?.nameEn,
-                "displayNameGuj": response.data.feed[i]?.category?.displayName,
-                "slugColor": response.data.feed[i]?.category?.color,
+                "slug": response.data.feed[i].header ? .slug,
+                "headerTitle": response.data.feed[i] ? .header ? .title,
+                "url": "https://www.divyabhaskar.co.in" + response.data.feed[i] ? .shortUrl,
+                "imageUrl": response.data.feed[i].header ? .media[0] ? .url ? ? null,
+                "publishTime": response.data.feed[i] ? .publishTime,
+                "displayNameEn": response.data.feed[i] ? .category ? .nameEn,
+                "displayNameGuj": response.data.feed[i] ? .category ? .displayName,
+                "slugColor": response.data.feed[i] ? .category ? .color,
             });
         }
 
@@ -52,7 +52,7 @@ app.get('/', async(req, res) => {
 
 // category wise
 
-app.get('/:category', async(req, res) => {
+app.get('/divya/:category', async(req, res) => {
 
     var category = req.params.category;
 
@@ -78,14 +78,14 @@ app.get('/:category', async(req, res) => {
             articles.push({
 
 
-                "slug": response.data.feed[i].header?.slug,
-                "headerTitle": response.data.feed[i]?.header?.title,
-                "url": "https://www.divyabhaskar.co.in" + response.data.feed[i]?.shortUrl,
-                "imageUrl": response.data.feed[i].header?.media[0]?.url ?? null,
-                "publishTime": response.data.feed[i]?.publishTime,
-                "displayNameEn": response.data.feed[i]?.category?.nameEn,
-                "displayNameGuj": response.data.feed[i]?.category?.displayName,
-                "slugColor": response.data.feed[i]?.category?.color,
+                "slug": response.data.feed[i].header ? .slug,
+                "headerTitle": response.data.feed[i] ? .header ? .title,
+                "url": "https://www.divyabhaskar.co.in" + response.data.feed[i] ? .shortUrl,
+                "imageUrl": response.data.feed[i].header ? .media[0] ? .url ? ? null,
+                "publishTime": response.data.feed[i] ? .publishTime,
+                "displayNameEn": response.data.feed[i] ? .category ? .nameEn,
+                "displayNameGuj": response.data.feed[i] ? .category ? .displayName,
+                "slugColor": response.data.feed[i] ? .category ? .color,
 
             });
         }
@@ -104,6 +104,9 @@ app.get('/:category', async(req, res) => {
 
 });
 
+
+
+
 app.listen(port, () => {
     console.log('running on port ' + port);
 });
@@ -111,7 +114,7 @@ app.listen(port, () => {
 
 
 
-const headers = {
+const divyaheaders = {
     "Host": "www.divyabhaskar.co.in",
     "Connection": "keep-alive",
     "DNT": 1,
