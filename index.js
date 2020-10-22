@@ -4,6 +4,11 @@ const port = process.env.PORT || 3000;
 
 const app = express();
 
+app.get("/", async(res, res)=>{
+    res.send({
+        "status" : "online"
+    });
+});
 
 app.get('/dainik/', async(req, res) => {
 
@@ -12,7 +17,7 @@ app.get('/dainik/', async(req, res) => {
     var newsResponse = {};
     var articles = [];
 
-    axios.get(url, { headers }).then((response) => {
+    axios.get(url, { dainikheaders }).then((response) => {
 
 
         var articleCount = response.data.feed.length;
@@ -161,7 +166,7 @@ app.get('/divya/:category', async(req, res) => {
     var newsResponse = {};
     var articles = [];
 
-    axios.get(url, { headers }).then((response) => {
+    axios.get(url, { divyaheaders }).then((response) => {
 
 
         var articleCount = response.data.feed.length;
