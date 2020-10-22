@@ -7,7 +7,6 @@
         "start": "node index.js",
         "build": "npm install",
         "prod": "PORT=80 node index.js"
-
     },
     "author": "ashish",
     "license": "ISC",
@@ -19,5 +18,8 @@
     },
     "engines": {
         "node": "14.x"
+    },
+    "devDependencies": {
+        "@babel/plugin-proposal-optional-chaining": "^7.12.1"
     }
 }
