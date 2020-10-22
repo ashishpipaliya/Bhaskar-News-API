@@ -25,14 +25,14 @@ app.get('/dainik/', async(req, res) => {
 
         for (var i = 0; i < articleCount; i++) {
             articles.push({
-                "slug": response.data.feed[i].header ? .slug,
-                "headerTitle": response.data.feed[i] ? .header ? .title,
-                url: "https://www.bhaskar.com" + response.data.feed[i] ? .shortUrl,
-                "imageUrl": response.data.feed[i].header ? .media[0] ? .url ? ? null,
-                "publishTime": response.data.feed[i] ? .publishTime,
-                "displayNameEn": response.data.feed[i] ? .category ? .nameEn,
-                "displayNameGuj": response.data.feed[i] ? .category ? .displayName,
-                "slugColor": response.data.feed[i] ? .category ? .color,
+                "slug": response.data.feed[i].header ?.slug,
+                "headerTitle": response.data.feed[i] ?.header ?.title,
+                url: "https://www.bhaskar.com" + response.data.feed[i] ?.shortUrl,
+                "imageUrl": response.data.feed[i].header ?.media[0] ?.url ? ? null,
+                "publishTime": response.data.feed[i] ?.publishTime,
+                "displayNameEn": response.data.feed[i] ?.category ?.nameEn,
+                "displayNameGuj": response.data.feed[i] ?.category ?.displayName,
+                "slugColor": response.data.feed[i] ?.category ?.color,
             });
         }
 
@@ -77,14 +77,14 @@ app.get('/dainik/:category', async(req, res) => {
 
         for (var i = 0; i < articleCount; i++) {
             articles.push({
-                "slug": response.data.feed[i].header ? .slug,
-                "headerTitle": response.data.feed[i] ? .header ? .title,
-                url: "https://www.bhaskar.com" + response.data.feed[i] ? .shortUrl,
-                "imageUrl": response.data.feed[i].header ? .media[0] ? .url ? ? null,
-                "publishTime": response.data.feed[i] ? .publishTime,
-                "displayNameEn": response.data.feed[i] ? .category ? .nameEn,
-                "displayNameGuj": response.data.feed[i] ? .category ? .displayName,
-                "slugColor": response.data.feed[i] ? .category ? .color,
+                "slug": response.data.feed[i].header ?.slug,
+                "headerTitle": response.data.feed[i] ?.header ?.title,
+                url: "https://www.bhaskar.com" + response.data.feed[i] ?.shortUrl,
+                "imageUrl": response.data.feed[i].header ?.media[0] ?.url ? ? null,
+                "publishTime": response.data.feed[i] ?.publishTime,
+                "displayNameEn": response.data.feed[i] ?.category ?.nameEn,
+                "displayNameGuj": response.data.feed[i] ?.category ?.displayName,
+                "slugColor": response.data.feed[i] ?.category ?.color,
             });
         }
 
@@ -122,14 +122,14 @@ app.get('/divya/', async(req, res) => {
         for (var i = 0; i < articleCount; i++) {
 
             articles.push({
-                "slug": response.data.feed[i].header ? .slug,
-                "headerTitle": response.data.feed[i] ? .header ? .title,
-                "url": "https://www.divyabhaskar.co.in" + response.data.feed[i] ? .shortUrl,
-                "imageUrl": response.data.feed[i].header ? .media[0] ? .url ? ? null,
-                "publishTime": response.data.feed[i] ? .publishTime,
-                "displayNameEn": response.data.feed[i] ? .category ? .nameEn,
-                "displayNameGuj": response.data.feed[i] ? .category ? .displayName,
-                "slugColor": response.data.feed[i] ? .category ? .color,
+                "slug": response.data.feed[i].header ?.slug,
+                "headerTitle": response.data.feed[i] ?.header ?.title,
+                "url": "https://www.divyabhaskar.co.in" + response.data.feed[i] ?.shortUrl,
+                "imageUrl": response.data.feed[i].header ?.media[0] ?.url ? ? null,
+                "publishTime": response.data.feed[i] ?.publishTime,
+                "displayNameEn": response.data.feed[i] ?.category ?.nameEn,
+                "displayNameGuj": response.data.feed[i] ?.category ?.displayName,
+                "slugColor": response.data.feed[i] ?.category ?.color,
             });
         }
 
@@ -176,14 +176,14 @@ app.get('/divya/:category', async(req, res) => {
             articles.push({
 
 
-                "slug": response.data.feed[i].header ? .slug,
-                "headerTitle": response.data.feed[i] ? .header ? .title,
-                "url": "https://www.divyabhaskar.co.in" + response.data.feed[i] ? .shortUrl,
-                "imageUrl": response.data.feed[i].header ? .media[0] ? .url ? ? null,
-                "publishTime": response.data.feed[i] ? .publishTime,
-                "displayNameEn": response.data.feed[i] ? .category ? .nameEn,
-                "displayNameGuj": response.data.feed[i] ? .category ? .displayName,
-                "slugColor": response.data.feed[i] ? .category ? .color,
+                "slug": response.data.feed[i].header ?.slug,
+                "headerTitle": response.data.feed[i] ?.header ?.title,
+                "url": "https://www.divyabhaskar.co.in" + response.data.feed[i] ?.shortUrl,
+                "imageUrl": response.data.feed[i].header ?.media[0] ?.url ? ? null,
+                "publishTime": response.data.feed[i] ?.publishTime,
+                "displayNameEn": response.data.feed[i] ?.category ?.nameEn,
+                "displayNameGuj": response.data.feed[i] ?.category ?.displayName,
+                "slugColor": response.data.feed[i] ?.category ?.color,
 
             });
         }
