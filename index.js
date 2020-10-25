@@ -8,6 +8,7 @@ const app = express();
 
 app.get("/", async (req, res) => {
 
+
     var hindiCategories ={
         "टॉप न्यूज़" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/hindi",
         "देश" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/hindi/national",
@@ -285,9 +286,9 @@ app.get('/magic/', (req, res) => {
         var paras = document.querySelectorAll('p');
         paras.forEach((item) => {
             if (!(item.innerHTML.length < 10 || item.innerHTML.includes('<a href='))) {
-                paragraph.push({
-                    p: item.innerHTML
-                });
+                paragraph.push(
+                   item.innerHTML
+             );
             }
         });
 
