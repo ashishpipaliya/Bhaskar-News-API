@@ -21,12 +21,12 @@ ___
 2. coronavirus
 3. entertainment
 4. international
+5. sports
 6. career
 7. tech-auto
-8. schedule-cards
-9.  women
-10. utility
-11. happylife
+8. women
+9. utility
+10. happylife
 
 ___
 
@@ -78,12 +78,13 @@ ___
 1. national
 2. coronavirus
 3. entertainment
-4. international
-5. dharm-darshan
-6. utility
-7. lifestyle
-8. business
-9. sports
+4. coronavirus
+5. international
+6. dharm-darshan
+7. utility
+8. lifestyle
+9. business
+10. sports
 
 
 ___
