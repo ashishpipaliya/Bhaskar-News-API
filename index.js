@@ -9,41 +9,56 @@ const app = express();
 app.get("/", async (req, res) => {
 
 
-    var hindiCategories ={
-        "टॉप न्यूज़" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/hindi",
-        "देश" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/hindi/national",
-        "कोरोना" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/hindi/coronavirus",
-        "एंटरटेनमेंट" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/hindi/entertainment",
-        "स्पोर्ट्स" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/hindi/sports",
-        "करिअर" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/hindi/career",
-        "टेक & ऑटो" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/hindi/tech-auto",
-        "वीमेन" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/hindi/women",
-        "यूटिलिटी" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/hindi/utility",
-        "हैप्पी लाइफ" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/hindi/happylife",
+    var hi = {
+        "टॉप न्यूज़": "hi",
+        "देश": "national",
+        "कोरोना": "coronavirus",
+        "एंटरटेनमेंट": "entertainment",
+        "स्पोर्ट्स": "sports",
+        "करिअर": "career",
+        "टेक & ऑटो": "tech-auto",
+        "वीमेन": "women",
+        "यूटिलिटी": "utility",
+        "हैप्पी लाइफ": "happylife",
     };
 
-    var gujCategories = {
 
+    var gu = {
+        "ટૉપ ન્યૂઝ": "gu",
+        "ઈન્ડિયા": "national",
+        "કોરોનાવાયરસ": "coronavirus",
+        "એન્ટરટેઇનમેન્ટ": "entertainment",
+        "વર્લ્ડ": "international",
+        "સ્પોર્ટ્સ": "sports",
+        "બિઝનેસ": "business",
+        "ધર્મ દર્શન": "dharm-darshan",
+        "યુટિલિટી": "utility",
+        "લાઇફસ્ટાઇલ": "lifestyle"
     };
 
-    var gujCategories = {
-          "ટૉપ ન્યૂઝ" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/guj",
-          "ઈન્ડિયા" : "https://bhaskar-news-api-0c72ef.asia1.kinto.io/guj/national",   
-          "કોરોનાવાયરસ": "https://bhaskar-news-api-0c72ef.asia1.kinto.io/guj/coronavirus",   
-          "એન્ટરટેઇનમેન્ટ": "https://bhaskar-news-api-0c72ef.asia1.kinto.io/guj/entertainment",   
-          "વર્લ્ડ":"https://bhaskar-news-api-0c72ef.asia1.kinto.io/guj/international" ,   
-          "સ્પોર્ટ્સ": "https://bhaskar-news-api-0c72ef.asia1.kinto.io/guj/sports",   
-          "બિઝનેસ": "https://bhaskar-news-api-0c72ef.asia1.kinto.io/guj/business",   
-          "ધર્મ દર્શન": "https://bhaskar-news-api-0c72ef.asia1.kinto.io/guj/dharm-darshan" ,  
-          "યુટિલિટી": "https://bhaskar-news-api-0c72ef.asia1.kinto.io/guj/utility", 
-          "લાઇફસ્ટાઇલ": "https://bhaskar-news-api-0c72ef.asia1.kinto.io/guj/lifestyle" 
+    var en = {
+        "national": "national",
+        "business": "business",
+        "politics": "politics",
+        "sports": "sports",
+        "technology": "technology",
+        "startups": "startups",
+        "entertainment": "entertainment",
+        "hatke": "hatke",
+        "education": "education",
+        "world": "world",
+        "automobile": "automobile",
+        "science": "science",
+        "travel": "travel",
+        "miscellaneous": "miscellaneous",
+        "fashion": "fashion"
     };
-  
 
     var response = {
         "status": "online",
-        "hin_categories" : hindiCategories,
-        "guj_categories" : gujCategories,
+        "hindi_categories": hi,
+        "gujarati_categories": gu,
+        "english_categories": en,
 
     };
 
@@ -52,7 +67,7 @@ app.get("/", async (req, res) => {
 });
 
 // all news
-app.get('/hindi/', async (req, res) => {
+app.get('/hi/', async (req, res) => {
 
     const url = "https://www.bhaskar.com/__api__/api/1.0/feed/home";
 
@@ -102,7 +117,7 @@ app.get('/hindi/', async (req, res) => {
 
 
 // category wise
-app.get('/hindi/:category', async (req, res) => {
+app.get('/hi/:category', async (req, res) => {
 
     var category = req.params.category;
 
@@ -152,7 +167,7 @@ app.get('/hindi/:category', async (req, res) => {
 
 
 // all news
-app.get('/guj/', async (req, res) => {
+app.get('/gu/', async (req, res) => {
 
     const url = "https://www.divyabhaskar.co.in/__api__/api/1.0/feed/home";
 
@@ -196,7 +211,7 @@ app.get('/guj/', async (req, res) => {
 
 
 // category wise
-app.get('/guj/:category', async (req, res) => {
+app.get('/gu/:category', async (req, res) => {
 
     var category = req.params.category;
 
@@ -247,6 +262,42 @@ app.get('/guj/:category', async (req, res) => {
 });
 
 
+/// inshorts english
+app.get('/en/:category', (req, res) => {
+
+    var category = req.params.category;
+
+    const base_url = "http://inshorts.com/api/en/search/trending_topics/" + category + "&max_limit=50&type=NEWS_CATEGORY";
+
+    var newsResponse = {};
+    var articles = [];
+
+    axios.get(base_url).then((response) => {
+        var articleCount = response.data.data.news_list.length;
+
+        newsResponse["total"] = articleCount;
+        newsResponse["category"] = category;
+
+        for (var i = 0; i < articleCount; i++) {
+            articles.push({
+                title: response?.data?.data?.news_list[i]?.news_obj?.title,
+                description: response?.data?.data?.news_list[i]?.news_obj?.content,
+                source: response.data?.data?.news_list[i]?.news_obj?.source_name,
+                post_url: response?.data?.data?.news_list[i]?.news_obj?.source_url,
+                image_url: response?.data?.data?.news_list[i]?.news_obj?.image_url,
+                created_at: response?.data?.data?.news_list[i]?.news_obj?.created_at,
+            });
+        }
+
+        newsResponse["articles"] = articles;
+
+        res.json(newsResponse);
+
+    });
+
+});
+
+
 
 app.get('/magic/', (req, res) => {
 
@@ -287,8 +338,8 @@ app.get('/magic/', (req, res) => {
         paras.forEach((item) => {
             if (!(item.innerHTML.length < 10 || item.innerHTML.includes('<a href='))) {
                 paragraph.push(
-                   item.innerHTML
-             );
+                    item.innerHTML
+                );
             }
         });
 
@@ -308,7 +359,6 @@ app.get('/magic/', (req, res) => {
 
 
 app.listen(port, () => {
-
     console.log('running on port ' + port);
 });
 
