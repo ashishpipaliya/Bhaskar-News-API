@@ -8,7 +8,6 @@ const app = express();
 
 app.get("/", async (req, res) => {
 
-
     var hi = {
         "टॉप न्यूज़": "hi",
         "देश": "national",
@@ -61,7 +60,6 @@ app.get("/", async (req, res) => {
         "english_categories": en,
 
     };
-
 
     res.send(response);
 });
@@ -261,7 +259,6 @@ app.get('/gu/:category', async (req, res) => {
     });
 });
 
-
 /// inshorts english
 app.get('/en/:category', (req, res) => {
 
@@ -296,8 +293,6 @@ app.get('/en/:category', (req, res) => {
     });
 
 });
-
-
 
 app.get('/magic/', (req, res) => {
 
@@ -356,13 +351,9 @@ app.get('/magic/', (req, res) => {
 });
 
 
-
-
 app.listen(port, () => {
     console.log('running on port ' + port);
 });
-
-
 
 
 var dainikHeaders = {
